@@ -1,0 +1,18 @@
+<div class="dropzone" jhiDrag (files)="fileDropped($event)">
+  <div class="text-wrapper">
+    <div class="centered">
+      Faites glisser et déposez le fichier ou parcourez le fichier
+      <a (click)="selectFile.click()" class="browse-button">browse</a>
+    </div>
+  </div>
+</div>
+<input
+  id="photo"
+  type="file"
+  style="display: none"
+  class="file-upload"
+  accept="image/jpeg, image/png, image/gif"
+  #selectFile
+  [multiple]="!singleMode"
+  (change)="processUploadFile($event)"
+/>

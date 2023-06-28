@@ -109,6 +109,7 @@
   },
   "defaultProject": "egps",
   "cli": {
+    "analytics": "7e802540-39c4-487d-a329-cccfb653ef33",
     "packageManager": "npm"
   }
 }

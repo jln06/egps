@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form (ngSubmit)="onSubmit()" [formGroup]="formQuiSuije">
+        <div class="form-group">
+          <label aria-label="titre" for="titre">Titre</label>
+          <input class="form-control" formControlName="titre" type="text" name="titre" id="titre" />
+        </div>
+
+        <div class="form-group">
+          <label for="sousTitre">Sous titre</label>
+          <input class="form-control" formControlName="sousTitre" type="text" name="sousTitre" id="sousTitre" />
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input class="form-control" formControlName="telephone" type="text" name="telephone" id="telephone" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <ckeditor id="description" [editor]="Editor" formControlName="description" (ready)="onReady($event)"> </ckeditor>
+        </div>
+
+        <jhi-upload-and-display [filesHandle]="files" [singleMode]="true"></jhi-upload-and-display>
+
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </form>
+    </div>
+  </div>
+</div>

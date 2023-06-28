@@ -1,0 +1,6 @@
+<jhi-qui-suis-je-lecture [quiSuije]="quiSuisJe" *ngIf="!(isEditMode | async)"></jhi-qui-suis-je-lecture>
+<jhi-qui-suis-je-ecriture
+  [quiSuije]="quiSuisJe"
+  *ngIf="isEditMode | async"
+  (formChange)="onChangeQuiSuisJe($event)"
+></jhi-qui-suis-je-ecriture>

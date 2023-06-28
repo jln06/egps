@@ -1,0 +1,78 @@
+<div class="container" id="contactZone">
+  <h2 class="text-center mb-5">Contact</h2>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            id="nom"
+            type="text"
+            class="form-control"
+            name="nom"
+            aria-describedby="nomHelp"
+            placeholder="Saisir votre nom"
+            formControlName="nom"
+            [class.is-invalid]="nom.invalid && (nom.touched || nom.dirty)"
+          />
+          <div class="invalid-feedback" *ngIf="nom?.hasError">
+            <ng-container *ngIf="nom?.hasError('required')"> Le nom est obligatoire </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input
+            id="prenom"
+            type="text"
+            class="form-control"
+            name="prenom"
+            aria-describedby="prenomHelp"
+            placeholder="Saisir votre prenom"
+            formControlName="prenom"
+            [class.is-invalid]="prenom.invalid && (prenom.touched || prenom.dirty)"
+          />
+          <div class="invalid-feedback" *ngIf="prenom?.errors">
+            <ng-container *ngIf="prenom?.errors['required']"> Le prénom est obligatoire </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input
+            id="telephone"
+            type="text"
+            class="form-control"
+            name="telephone"
+            aria-describedby="telephoneHelp"
+            placeholder="Saisir votre numéro de téléphone"
+            formControlName="email"
+            [class.is-invalid]="telephone.invalid && (telephone.touched || telephone.dirty)"
+          />
+          <div class="invalid-feedback" *ngIf="telephone?.errors">
+            <ng-container *ngIf="telephone?.errors['required']"> Le numéro de téléphone est obligatoire </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="text"
+            class="form-control"
+            name="email"
+            aria-describedby="emailHelp"
+            placeholder="Saisir votre email"
+            formControlName="email"
+            [class.is-invalid]="email.invalid && (email.touched || email.dirty)"
+          />
+          <div class="invalid-feedback" *ngIf="email?.errors">
+            <ng-container *ngIf="email?.errors['required']"> L'émail est obligatoire </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="commentaire">Comment</label>
+          <textarea class="form-control" id="commentaire" formControlName="commentaire" name="commentaire"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

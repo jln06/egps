@@ -1,0 +1,2 @@
+<jhi-upload-images *ngIf="isEditMode | async" (fileUploaded)="onFileUploaded($event)" [singleMode]="singleMode"></jhi-upload-images>
+<jhi-display-images [onlyRead]="!(isEditMode | async)" [filesHandle]="filesHandle"></jhi-display-images>

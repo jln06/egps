@@ -19,11 +19,11 @@ services:
       - 127.0.0.1:8080:8080
   egps-postgresql:
     image: postgres:13.3
-    # volumes:
-    #   - ~/volumes/jhipster/egps/postgresql/:/var/lib/postgresql/data/
+    volumes:
+      - ~/volumes/jhipster/egps/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=egps
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=egps
       - POSTGRES_HOST_AUTH_METHOD=trust
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
@@ -31,8 +31,8 @@ services:
       - 127.0.0.1:5432:5432
   egps-elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
-    # volumes:
-    #   - ~/volumes/jhipster/egps/elasticsearch/:/usr/share/elasticsearch/data/
+    volumes:
+      - ~/volumes/jhipster/egps/elasticsearch/:/usr/share/elasticsearch/data/
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:

@@ -22,7 +22,37 @@
         <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
           <span>
             <fa-icon icon="home"></fa-icon>
-            <span>Home</span>
+            <span>Accueil</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+          <span>
+            <span>Qui sommes nous</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/" (click)="scrollTo('galerieZone')">
+          <span>
+            <span>Galerie</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/" (click)="scrollTo('contactZone')">
+          <span>
+            <fa-icon icon="image"></fa-icon>
+            <span>Contact</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/" (click)="activeUpdateMode()">
+          <span>
+            <fa-icon icon="image"></fa-icon>
+            <span>Paramétrage</span>
           </span>
         </a>
       </li>
@@ -143,7 +173,7 @@
           <li *ngSwitchCase="true">
             <a class="dropdown-item" (click)="logout()" id="logout" data-cy="logout">
               <fa-icon icon="sign-out-alt" [fixedWidth]="true"></fa-icon>
-              <span>Sign out</span>
+              <span>Se déconnecter</span>
             </a>
           </li>
           <li *ngSwitchCase="false">
@@ -163,3 +193,20 @@
     </ul>
   </div>
 </nav>
+
+<h1>Angular 8 Bootstrap Modal Popup Example</h1>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">This is example from ItSolutionStuff.com</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>

@@ -55,7 +55,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:file:./target/h2db/db/egps;DB_CLOSE_DELAY=-1
     username: egps
-    password:
+    password: egps
     hikari:
       poolName: Hikari
       auto-commit: false
